@@ -22,9 +22,4 @@ class Todo extends Model
     {
         return $this->belongsTo('App\User')
     }
-
-    public function user_task()
-    {
-        return $this->belongsTo('App\User');
-    }
 }
