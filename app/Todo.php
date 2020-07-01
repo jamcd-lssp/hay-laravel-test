@@ -17,4 +17,14 @@ class Todo extends Model
     {
     	return $query->where('flg', $num);
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User')
+    }
+
+    public function user_task()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

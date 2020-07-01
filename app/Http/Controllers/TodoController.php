@@ -11,7 +11,7 @@ class TodoController extends Controller
     public function index()
     {
     	$user = Auth::user();
-    	$runningItems = Todo::flg(1)->get();
+    	$runningItems = $user->todo_now;
     	$doneItems = Todo::flg(0)->get();
     	$param = [
     		'runningItems' => $runningItems,
