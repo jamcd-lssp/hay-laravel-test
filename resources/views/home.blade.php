@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('ログインしました!') }}
+                    <a href="todo/">ToDoList</a>
                 </div>
             </div>
         </div>
