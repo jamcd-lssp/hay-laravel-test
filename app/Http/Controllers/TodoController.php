@@ -23,7 +23,11 @@ class TodoController extends Controller
 	    	];
     		return view('todo.index', $param);
     	} else {
-    		return view('todo.index');
+    		$user = Auth::user();
+    		$param = [
+	    		'user' => $user,
+	    	];
+    		return view('todo.index', $param);
     	}
     }
 
