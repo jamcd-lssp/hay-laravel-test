@@ -12,9 +12,9 @@ class TodoController extends Controller
     {
     	if (Auth::check()) {
     		$user = Auth::user();
-    		$lists = Todo::all();
-    		$runningItems = $user->$lists->with('flg', 1)->get();
-	    	$doneItems =  $user->$lists->with('flg', 0)->get();
+    		$lists = Todo::with('user');
+    		$runningItems = $user->Todo::flg(1)->get();
+	    	$doneItems =  $user->Todo::flg(0)->get();
 	    	$param = [
 	    		'runningItems' => $runningItems,
 	    		'doneItems' => $doneItems,
@@ -32,7 +32,7 @@ class TodoController extends Controller
 		$form = $request->all();
 		unset($form['_token']);
 		$form['flg'] = 1;
-		Auth::user()->fill($form)->save();
+		Auth::user()->Todo::with('user')->fill($form)->save();
 		return redirect('/todo');
 	}
 
@@ -40,7 +40,7 @@ class TodoController extends Controller
 	{
 		$form = $request->all();
 		$form['flg'] = 0;
-		Auth::user()->fill($form)->save();
+		Auth::user()->Todo::with('user')->fill($form)->save();
 		return redirect('/todo');
 	}
 
