@@ -31,16 +31,17 @@ class TodoController extends Controller
 		$todo = new Todo;
 		$form = $request->all();
 		unset($form['_token']);
-		$todo->flg = 1;
+		$todo->$request->flg = 1;
 		Auth::user()->$todo->fill($form)->save();
 		return redirect('/todo');
 	}
 
 	public function update(Request $request)
 	{
-		$todo = Todo::find($request->id);
+		$todo = new Todo;
+		$form = $request->all();
 		$todo->flg = 0;
-		Auth::user()->$todo->save();
+		Auth::user()->$todo->fill($form)->save();
 		return redirect('/todo');
 	}
 
