@@ -39,7 +39,6 @@ class TodoController extends Controller
 		$todo = new Todo;
 		$form = $request->all();
 		unset($form['_token']);
-		$form['flg'] = 1;
 		$todo->fill($form)->save();
 		return redirect('/todo');
 	}
