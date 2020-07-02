@@ -54,7 +54,7 @@
 	</ul>
 	<form method="POST" class="form" action="todo" action="todo/create">
 		@csrf
-		<input type="hidden" value="{{$user->name}}" name="name">
+		<input type="text" value="{{$user->name}}" name="name">
 		<input type="text" placeholder="タイトルを入力してね" name="title" class="title">
 		<textarea placeholder="内容を入力してね" name="content" class="content"></textarea>
 		<input type="submit" value="追加" class="todo_button">
