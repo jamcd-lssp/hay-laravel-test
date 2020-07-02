@@ -11,14 +11,18 @@ class TodoController extends Controller
     public function index()
     {
     	$user = Auth::user();
-    	$runningItems = Todo::with('user')->flg(1)->get();
+    	if (Todo::with('user')->flg(1)) {
+    		$runningItems = Todo::with('user')->flg(1)->get();
     	$doneItems =  Todo::with('user')->flg(0)->get();
     	$param = [
     		'runningItems' => $runningItems,
     		'doneItems' => $doneItems,
     		'user' => $user,
     	];
-    	return view('todo.index', $param);
+    		return view('todo.index', $param);
+    	} else {
+    		return view('todo.index');
+    	}
     }
 
 	public function create(Request $request)
