@@ -32,7 +32,7 @@ class TodoController extends Controller
 		$form = $request->all();
 		unset($form['_token']);
 		$todo->flg = 1;
-		$todo->fill($form)->save();
+		Auth::user()->$todo->fill($form)->save();
 		return redirect('/todo');
 	}
 
@@ -40,7 +40,7 @@ class TodoController extends Controller
 	{
 		$todo = Todo::find($request->id);
 		$todo->flg = 0;
-		$todo->save();
+		Auth::user()->$todo->save();
 		return redirect('/todo');
 	}
 
