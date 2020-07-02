@@ -18,7 +18,7 @@ class CreateTodosTable extends Migration
             $table->string('user-name');
             $table->string('title');
             $table->string('content');
-            $table->string('flg')->nullable()->change();
+            $table->string('flg')->default(1);
             $table->timestamps();
         });
     }
