@@ -10,8 +10,9 @@ class TodoController extends Controller
 {
     public function index()
     {
-    	$lists = Todo::with('user')->get();
-    	if (in_array('flg', $lists)) {
+    	$userList = Todo::with('user')->get();
+    	$userLists = compact('userList');
+    	if (in_array('flg', $userLists)) {
     		$user = Auth::user();
     		$runningItems = Todo::with('user')->flg(1)->get();
 	    	$doneItems =  Todo::with('user')->flg(0)->get();
