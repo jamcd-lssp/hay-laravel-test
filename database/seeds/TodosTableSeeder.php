@@ -16,7 +16,7 @@ class TodosTableSeeder extends Seeder
         	'user-name' => 'hon',
         	'title' => 'TodoListの作成',
         	'content' => '今日中には作成したい。',
-        	'flg' => 1,
+        	'flg' => '1',
 		];
 		DB::table('todos')->insert($param);
     }
