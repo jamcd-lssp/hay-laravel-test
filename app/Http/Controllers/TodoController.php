@@ -11,13 +11,12 @@ class TodoController extends Controller
     public function index()
     {
     	if (Auth::check()) {
-    		$user = Auth::user();
     		$lists = Todo::with('user');
     		$runningItems = Todo::wherehas('user', function($query){
-    						$query->where('user_name', $user)
+    						$query->where('user_name', Auth::user())
     						->where('flg', 1);})->get();
 	    	$doneItems = Todo::wherehas('user', function($query){
-						$query->where('user_name', $user)
+						$query->where('user_name', Auth::user())
     						->where('flg', 0);})->get();
 	    	$param = [
 	    		'runningItems' => $runningItems,
