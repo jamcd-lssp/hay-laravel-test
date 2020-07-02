@@ -26,6 +26,7 @@ class TodoController extends Controller
     		$user = Auth::user();
     		$param = [
 	    		'user' => $user,
+	    		$runningItems = Todo::with('user')->flg(1)->get(),
 	    	];
     		return view('todo.index', $param);
     	}
