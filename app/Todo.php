@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Todo extends Model
 {
     protected $guarded = ['id'];
-    protected $table = 'todos';
     public static $rules = [
     	'title' => 'required',
     	'content' => 'required',

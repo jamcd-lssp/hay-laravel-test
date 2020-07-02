@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Todo;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
@@ -11,7 +11,7 @@ class TodoController extends Controller
     public function index()
     {
     	$user = Auth::user();
-    	$runningItems = $user->todo_now;
+    	$runningItems = Todo::with('user')->flg(1)->get();
     	$doneItems = Todo::flg(0)->get();
     	$param = [
     		'runningItems' => $runningItems,

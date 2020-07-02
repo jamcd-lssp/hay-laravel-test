@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Todo;
+use Illuminate\Database\Eloquent\Builder;
 
 class User extends Authenticatable
 {
@@ -43,8 +43,4 @@ class User extends Authenticatable
         return $this->hasMany('App\Todo');
     }
 
-    public function todo_now()
-    {
-        return $this->hasMany('App\Todo')->where('flg', 1);
-    }
 }
