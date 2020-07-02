@@ -23,17 +23,17 @@
 	<h2>これからやること</h2>
 	<ul class="ul">
 		@if (isset ($runningItems))
-		@foreach($runningItems as $runningItem)
-		<li class="todo">{{htmlspecialchars($runningItem->name)}}</li>
-		<li>{{htmlspecialchars($runningItem->content)}}</li>
-			<form method="POST" action="todo/update">
-				@csrf
-				<input type="hidden" value="{{$runningItem->id}}" name="id">
-				<input type="hidden" value="{{$runningItem->name}}" name="name">
-				<input type="hidden" value="{{$runningItem->flg}}" name="flg">
-				<input type="submit" value="終了" class="todo_button">
-			</form>
-		@endforeach
+			@foreach($runningItems as $runningItem)
+			<li class="todo">{{htmlspecialchars($runningItem->title)}}</li>
+			<li>{{htmlspecialchars($runningItem->content)}}</li>
+				<form method="POST" action="todo/update">
+					@csrf
+					<input type="hidden" value="{{$runningItem->id}}" name="id">
+					<input type="hidden" value="{{$runningItem->name}}" name="name">
+					<input type="hidden" value="{{$runningItem->flg}}" name="flg">
+					<input type="submit" value="終了" class="todo_button">
+				</form>
+			@endforeach
 		@endif
 	</ul>
 	<h2>もうやったこと</h2>

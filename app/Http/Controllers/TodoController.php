@@ -10,16 +10,20 @@ class TodoController extends Controller
 {
     public function index()
     {
-		$user = Auth::user();
-		$runningItems = Todo::with('user')->flg(1)->get();
-    	$doneItems =  Todo::with('user')->flg(0)->get();
-    	$param = [
-    		'runningItems' => $runningItems,
-    		'doneItems' => $doneItems,
-    		'user' => $user,
-    	];
-		return view('todo.index', $param);
-	}
+    	if (Auth::check()) {
+    		$user = Auth::user();
+    		$runningItems = Todo::with('user')->flg(1)->get();
+	    	$doneItems =  Todo::with('user')->flg(0)->get();
+	    	$param = [
+	    		'runningItems' => $runningItems,
+	    		'doneItems' => $doneItems,
+	    		'user' => $user,
+	    	];
+    		return view('todo.index', $param);
+    	} else {
+    		return view('todo.index');
+    	}
+    }
 
 	public function create(Request $request)
 	{
@@ -27,6 +31,7 @@ class TodoController extends Controller
 		$todo = new Todo;
 		$form = $request->all();
 		unset($form['_token']);
+		$todo->flg = 1;
 		$todo->fill($form)->save();
 		return redirect('/todo');
 	}
