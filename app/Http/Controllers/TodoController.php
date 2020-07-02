@@ -10,24 +10,28 @@ class TodoController extends Controller
 {
     public function index()
     {
-    	$userList = Todo::find('user-name')->get();
-    	if (isset($userList)) {
-    		$user = Auth::user();
-    		$runningItems = Todo::with('user')->flg(1)->get();
-	    	$doneItems =  Todo::with('user')->flg(0)->get();
-	    	$param = [
-	    		'runningItems' => $runningItems,
-	    		'doneItems' => $doneItems,
-	    		'user' => $user,
-	    	];
-    		return view('todo.index', $param);
+    	if (Auth::check()){
+    		$userList = Todo::find('user-name')->get();
+	    	if (isset($userList)) {
+	    		$user = Auth::user();
+	    		$runningItems = Todo::with('user')->flg(1)->get();
+		    	$doneItems =  Todo::with('user')->flg(0)->get();
+		    	$param = [
+		    		'runningItems' => $runningItems,
+		    		'doneItems' => $doneItems,
+		    		'user' => $user,
+		    	];
+	    		return view('todo.index', $param);
+	    	} else {
+	    		$user = Auth::user();
+	    		$runningItems = Todo::with('user')->flg(1)->get();
+	    		$param = [
+		    		'user' => $user,
+		    	];
+	    		return view('todo.index', $param);
+	    	}
     	} else {
-    		$user = Auth::user();
-    		$runningItems = Todo::with('user')->flg(1)->get();
-    		$param = [
-	    		'user' => $user,
-	    	];
-    		return view('todo.index', $param);
+    		return view('todo.index');
     	}
     }
 
