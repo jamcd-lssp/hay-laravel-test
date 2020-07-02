@@ -28,20 +28,18 @@ class TodoController extends Controller
 	public function create(Request $request)
 	{
 		$this->validate($request, todo::$rules);
-		$todo = new Todo;
 		$form = $request->all();
 		unset($form['_token']);
 		$form['flg'] = 1;
-		Auth::user()->$todo->fill($form)->save();
+		Auth::user()->fill($form)->save();
 		return redirect('/todo');
 	}
 
 	public function update(Request $request)
 	{
-		$todo = new Todo;
 		$form = $request->all();
 		$form['flg'] = 0;
-		Auth::user()->$todo->fill($form)->save();
+		Auth::user()->fill($form)->save();
 		return redirect('/todo');
 	}
 
