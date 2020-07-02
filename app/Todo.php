@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\Builder;
 class Todo extends Model
 {
     protected $primaryKey = 'name';
-    protected $fillable = ['name', 'title', 'content', 'flg'];
+    protected $fillable = ['id', 'name', 'title', 'content', 'flg'];
     public static $rules = [
+        'name' => 'required',
     	'title' => 'required',
     	'content' => 'required',
+        'flg' => 'required',
     ];
 
     public function scopeFlg($query, $num)
