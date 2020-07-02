@@ -11,7 +11,7 @@ class TodoController extends Controller
     public function index()
     {
     	$lists = Todo::all()->get();
-    	if (in_array('flg', $lists) {
+    	if (in_array('flg', $lists)) {
     		$user = Auth::user();
     		$runningItems = Todo::with('user')->flg(1)->get();
 	    	$doneItems =  Todo::with('user')->flg(0)->get();
