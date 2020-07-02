@@ -12,7 +12,7 @@ class TodoController extends Controller
     {
     	$user = Auth::user();
     	$runningItems = Todo::with('user')->flg(1)->get();
-    	$doneItems = Todo::flg(0)->get();
+    	$doneItems =  Todo::with('user')->flg(0)->get();
     	$param = [
     		'runningItems' => $runningItems,
     		'doneItems' => $doneItems,

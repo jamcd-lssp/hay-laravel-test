@@ -29,7 +29,6 @@
 			<form method="POST" action="todo/update">
 				@csrf
 				<input type="hidden" value="{{$runningItem->id}}" name="id">
-				<input type="hidden" value="{{$runningItem->name}}" name="name">
 				<input type="hidden" value="{{$runningItem->flg}}" name="flg">
 				<input type="submit" value="終了" class="todo_button">
 			</form>
@@ -45,7 +44,6 @@
 			<form method="POST" action="todo/delete">
 				@csrf
 				<input type="hidden" value="{{$doneItem->id}}" name="id">
-				<input type="hidden" value="{{$runningItem->name}}" name="name">
 				<input type="hidden" value="{{$doneItem->flg}}" name="flg">
 				<input type="submit" value="削除" class="todo_button">
 			</form>
