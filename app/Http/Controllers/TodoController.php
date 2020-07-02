@@ -10,7 +10,7 @@ class TodoController extends Controller
 {
     public function index()
     {
-    	$userList = Todo::with('user')->get();
+    	$userList = DB::table('todos')->get();
     	$userLists = compact('userList');
     	if (in_array('flg', $userLists)) {
     		$user = Auth::user();

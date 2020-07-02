@@ -25,7 +25,7 @@
 		@if (isset ($runningItems))
 		@foreach($runningItems as $runningItem)
 		<li class="todo">{{htmlspecialchars($runningItem->user-name)}}</li>
-		<!-- <li>{{htmlspecialchars($runningItem->content)}}</li> -->
+		<li>{{htmlspecialchars($runningItem->content)}}</li>
 			<form method="POST" action="todo/update">
 				@csrf
 				<input type="hidden" value="{{$runningItem->id}}" name="id">
