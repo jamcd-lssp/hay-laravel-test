@@ -14,10 +14,10 @@ class TodoController extends Controller
     		$user = Auth::user();
     		$lists = Todo::with('user');
     		$runningItems = Todo::wherehas('user', function($query){
-    						$query->where('user-name', $user-name)
+    						$query->where('user-name', $name)
     						->where('flg', 1);})->get();
 	    	$doneItems = Todo::wherehas('user', function($query){
-						$query->where('user-name', $user-name)
+						$query->where('user-name', $name)
     						->where('flg', 0);})->get();
 	    	$param = [
 	    		'runningItems' => $runningItems,
