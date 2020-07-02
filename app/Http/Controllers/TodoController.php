@@ -11,7 +11,7 @@ class TodoController extends Controller
     public function index()
     {
     	if (Auth::check()) {
-    		$lists = Todo::with('user');
+    		$user = Auth::user();
     		$runningItems = Todo::where('user_name', Auth::user())
     						->where('flg', 1)->get();
 	    	$doneItems = Todo::where('user_name', Auth::user())
@@ -23,7 +23,7 @@ class TodoController extends Controller
 	    	];
     		return view('todo.index', $param);
     	} else {
-    		return view('todo.index');
+    		return redirect('/login');
     	}
     }
 
