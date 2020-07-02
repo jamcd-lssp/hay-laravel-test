@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Builder;
 class Todo extends Model
 {
     protected $primaryKey = 'user-name';
+    public $incrementing = false;
+    protected $keyType = 'string';
     protected $fillable = ['user-name', 'title', 'content'];
     public static $rules = [
         'user-name' => 'required',
