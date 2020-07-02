@@ -19,8 +19,7 @@ class TodoController extends Controller
     		'user' => $user,
     	];
 		return view('todo.index', $param);
-    	}
-    }
+	}
 
 	public function create(Request $request)
 	{
