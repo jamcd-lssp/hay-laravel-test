@@ -27,7 +27,6 @@ class TodoController extends Controller
     		$runningItems = Todo::with('user')->flg(1)->get();
     		$param = [
 	    		'user' => $user,
-	    		'runningItems' => $runningItems,
 	    	];
     		return view('todo.index', $param);
     	}
