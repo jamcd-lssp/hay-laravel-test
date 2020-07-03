@@ -9,12 +9,11 @@ use Illuminate\Database\Eloquent\Builder;
 class Todo extends Model
 {
     protected $primaryKey = 'user_id';
-    public $incrementing = false;
-    protected $keyType = 'string';
-    protected $fillable = ['title', 'content',];
+    protected $fillable = ['title', 'content', 'flg'];
     public static $rules = [
     	'title' => 'required',
     	'content' => 'required',
+        'flg' => 'required',
     ];
 
     public function scopeFlg($query, $num)
