@@ -23,7 +23,7 @@
 	<h2>これからやること</h2>
 	<ul class="ul">
 	@if (Auth::check())
-		<p>ようこそ！{{$user->name.}}さん。</p>
+		<p>ようこそ！{{$user->name}}さん。</p>
 		    <form id="logout-form" action="{{ route('logout') }}" method="POST">
 		      @csrf
 		      <input type="submit" value="ログアウト">
