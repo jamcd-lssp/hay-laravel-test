@@ -31,18 +31,21 @@ class TodoController extends Controller
 		$request->user()->todo()->create([
 			'name' => $request->name,
 			'title' => $request->title,
-			'flg' => 1
+			'flg' => 1,
 		]);
-		unset($request->'_token');
+		unset($request->_token);
 		return redirect('/todo');
 	}
 
 	public function update(Request $request)
 	{
-		$form = $request->all();
-		$todo = new Todo;
-		$form['flg'] = 0;
-		$request->user()->$todo->fill($form)->save();
+		$this->validate($request, todo::$rules);
+		$request->user()->todo()->create([
+			'name' => $request->name,
+			'title' => $request->title,
+			'flg' => 0,
+		]);
+		unset($request->_token);
 		return redirect('/todo');
 	}
 
