@@ -41,8 +41,8 @@ class TodoController extends Controller
 	public function update(Request $request)
 	{
 		$todo = $request->user()->todo();
-		$todo->flg = 0;
-		$todo->save();
+		$reFlg = $todo->flg = 0;
+		$todo->save($reFlg);
 		return redirect('/todo');
 	}
 
