@@ -42,7 +42,7 @@ class TodoController extends Controller
 	{
 		$list = $request->user()->todo();
 		$list->flg = 0;
-		$todo->fill($list)->save();
+		$request->user()->fill($list)->save();
 		return redirect('/todo');
 	}
 
