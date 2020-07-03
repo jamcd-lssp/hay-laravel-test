@@ -12,9 +12,8 @@ class TodoController extends Controller
     {
     	if (Auth::check()) {
     		$user = Auth::user();
-    		$runningItems = Todo::where('user_name', Auth::user())
-    						->where('flg', 1)->get();
-	    	$doneItems = Todo::where('user_name', Auth::user())
+    		$runningItems = Todo::where('flg', 1)->first();
+	    	$doneItems = Todo::where('user_name', $user)
     						->where('flg', 0)->get();
 	    	$param = [
 	    		'runningItems' => $runningItems,
