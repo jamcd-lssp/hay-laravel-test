@@ -24,10 +24,10 @@
 	<ul class="ul">
 	@if (Auth::check())
 		<p>ようこそ！{{$user->name}}さん。</p>
-		    <form id="logout-form" action="{{ route('logout') }}" method="POST">
-		      @csrf
-		      <input type="submit" value="ログアウト">
-		    </form>
+	    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+	      @csrf
+	      <input type="submit" value="ログアウト">
+	    </form>
 		@if (isset ($runningItems))
 			@foreach($runningItems as $runningItem)
 			<li class="todo">{{htmlspecialchars($runningItem->title)}}</li>
@@ -42,36 +42,36 @@
 				</form>
 			@endforeach
 		@endif
-			</ul>
-			<h2>もうやったこと</h2>
-			<ul class="ul">
-				@if (isset ($doneItems))
-				@foreach($doneItems as $doneItem)
+		</ul>
+		<h2>もうやったこと</h2>
+		<ul class="ul">
+		@if (isset ($doneItems))
+			@foreach($doneItems as $doneItem)
 				<li class="todo">{{htmlspecialchars($doneItem->title)}}</li>
 				<li>{{htmlspecialchars($doneItem->content)}}</li>
-					<form method="POST" action="todo/delete">
-						@csrf
-						<input type="hidden" value="{{$doneItem->id}}" name="id">
-						<input type="hidden" value="{{$runningItem->title}}" name="title">
-						<input type="hidden" value="{{$user->name}}" name="name">
-						<input type="hidden" value="{{$doneItem->flg}}" name="flg">
-						<input type="submit" value="削除" class="todo_button">
-					</form>
-		@endforeach
+				<form method="POST" action="todo/delete">
+					@csrf
+					<input type="hidden" value="{{$doneItem->id}}" name="id">
+					<input type="hidden" value="{{$doneItem->title}}" name="title">
+					<input type="hidden" value="{{$user->name}}" name="name">
+					<input type="hidden" value="{{$doneItem->flg}}" name="flg">
+					<input type="submit" value="削除" class="todo_button">
+				</form>
+			@endforeach
 		@endif
-			</ul>
-			<form method="POST" class="form" action="todo" action="todo/create">
-				@csrf
-				<input type="hidden" value="{{$user->name}}" name="name">
-				<input type="text" placeholder="タイトルを入力してね" name="title" class="title">
-				<input type="hidden" value="flg" name="flg">
-				<textarea placeholder="内容を入力してね" name="content" class="content"></textarea>
-				<input type="submit" value="追加" class="todo_button">
-			</form>
-		@else
-			<p>※ログインしていません。(<a href="/login"> ログイン</a><br>
-			<a href="/register">登録</a>)</p>
-		@endif
+		</ul>
+		<form method="POST" class="form" action="todo" action="todo/create">
+			@csrf
+			<input type="hidden" value="{{$user->name}}" name="name">
+			<input type="text" placeholder="タイトルを入力してね" name="title" class="title">
+			<input type="hidden" value="flg" name="flg">
+			<textarea placeholder="内容を入力してね" name="content" class="content"></textarea>
+			<input type="submit" value="追加" class="todo_button">
+		</form>
+	@else
+		<p>※ログインしていません。(<a href="/login"> ログイン</a><br>
+		<a href="/register">登録</a>)</p>
+	@endif
 @endsection
 
 @section('footer')
