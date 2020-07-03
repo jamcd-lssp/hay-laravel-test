@@ -40,7 +40,7 @@ class TodoController extends Controller
 
 	public function update(Request $request)
 	{
-		$todo = Todo::find($request->id);
+		$todo = $request->user()->todo();
 		$todo->flg = 0;
 		$todo->save();
 		return redirect('/todo');
