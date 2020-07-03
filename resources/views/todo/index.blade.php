@@ -30,7 +30,7 @@
 					@csrf
 					<input type="hidden" value="{{$runningItem->id}}" name="id">
 					<input type="hidden" value="{{$runningItem->title}}" name="title">
-					<input type="hidden" value="{{$user->name}}" name="user_name">
+					<input type="hidden" value="{{$user->name}}" name="name">
 					<input type="hidden" value="{{$runningItem->flg}}" name="flg">
 					<input type="submit" value="終了" class="todo_button">
 				</form>
@@ -47,7 +47,7 @@
 				@csrf
 				<input type="hidden" value="{{$doneItem->id}}" name="id">
 				<input type="hidden" value="{{$runningItem->title}}" name="title">
-				<input type="hidden" value="{{$user->name}}" name="user_name">
+				<input type="hidden" value="{{$user->name}}" name="name">
 				<input type="hidden" value="{{$doneItem->flg}}" name="flg">
 				<input type="submit" value="削除" class="todo_button">
 			</form>
@@ -56,7 +56,7 @@
 	</ul>
 	<form method="POST" class="form" action="todo" action="todo/create">
 		@csrf
-		<input type="hidden" value="{{$user->name}}" name="user_name">
+		<input type="hidden" value="{{$user->name}}" name="name">
 		<input type="text" placeholder="タイトルを入力してね" name="title" class="title">
 		<input type="hidden" value="flg" name="flg">
 		<textarea placeholder="内容を入力してね" name="content" class="content"></textarea>

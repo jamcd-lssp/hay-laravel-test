@@ -15,7 +15,8 @@ class CreateTodosTable extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_name');
+            $table->integer('user_id')->unsigned()->index();
+            $table->string('name');
             $table->string('title');
             $table->string('content');
             $table->integer('flg');

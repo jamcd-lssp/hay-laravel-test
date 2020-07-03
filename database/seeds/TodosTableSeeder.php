@@ -13,7 +13,7 @@ class TodosTableSeeder extends Seeder
     public function run()
     {
         $param = [
-        	'user_name' => 'test',
+        	'name' => 'test',
         	'title' => 'やりたいことを入力するとここに表示されます！',
         	'content' => 'やり終えたら終了を押してね。',
         	'flg' => 1,
@@ -21,7 +21,7 @@ class TodosTableSeeder extends Seeder
 		DB::table('todos')->insert($param);
 
 		$param = [
-        	'user_name' => 'hay',
+        	'name' => 'hay',
         	'title' => '早起き',
         	'content' => '朝活！',
         	'flg' => 0,

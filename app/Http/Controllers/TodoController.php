@@ -13,7 +13,7 @@ class TodoController extends Controller
     	if (Auth::check()) {
     		$user = Auth::user();
     		$runningItems = Auth::user()->name->Todo::where('flg', 1)->get();
-	    	$doneItems = Auth::user()->name->Todo::where('flg', 0)->get();
+	    	$doneItems = Todo::where('flg', 0)->get();
 	    	$param = [
 	    		'runningItems' => $runningItems,
 	    		'doneItems' => $doneItems,
@@ -28,11 +28,12 @@ class TodoController extends Controller
 	public function create(Request $request)
 	{
 		$this->validate($request, todo::$rules);
-		$todo = new Todo;
-		$form = $request->all();
-		unset($form['_token']);
-		$form['flg'] = 1;
-		$todo->fill($form)->save();
+		$request->user()->todo()->create([
+			'name' => $request->name,
+			'title' => $request->title,
+			'flg' => 1
+		]);
+		unset($request->'_token');
 		return redirect('/todo');
 	}
 
@@ -41,14 +42,14 @@ class TodoController extends Controller
 		$form = $request->all();
 		$todo = new Todo;
 		$form['flg'] = 0;
-		$todo->fill($form)->save();
+		$request->user()->$todo->fill($form)->save();
 		return redirect('/todo');
 	}
 
 	public function delete(Request $request)
 	{
 		$todo = Todo::find($request->id);
-		Auth::user()->name->Todo::where('flg', 0)->delete();
+		$request->user()->Todo::where('flg', 0)->delete();
 		return redirect('/todo');
 	}
 

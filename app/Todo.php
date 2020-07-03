@@ -2,17 +2,17 @@
 
 namespace App;
 
+use App\Usser;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
 class Todo extends Model
 {
-    protected $primaryKey = 'user_name';
+    protected $primaryKey = 'user_id';
     public $incrementing = false;
     protected $keyType = 'string';
-    protected $fillable = ['user_name', 'title', 'content', 'flg'];
+    protected $fillable = ['title', 'content', 'flg'];
     public static $rules = [
-        'user_name' => 'required',
     	'title' => 'required',
     	'content' => 'required',
     ];
@@ -24,6 +24,6 @@ class Todo extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class);
     }
 }
