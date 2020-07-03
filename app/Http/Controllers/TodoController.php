@@ -54,7 +54,7 @@ class TodoController extends Controller
 	public function delete(Request $request)
 	{
 		$todo = Todo::find($request->id);
-		$todo->where('flg', 0)->delete();
+		$request->user()->todo()->where('flg', 0)->delete();
 		return redirect('/todo');
 	}
 
