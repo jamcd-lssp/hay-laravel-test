@@ -41,10 +41,7 @@ class TodoController extends Controller
 	public function update(Request $request)
 	{
 		$this->validate($request, todo::$rules);
-		$request->user()->todo()->create([
-			'name' => $request->name,
-			'content' => $request->content,
-			'title' => $request->title,
+		$request->user()->todo()->where('flg', 1)->create([
 			'flg' => 0,
 		]);
 		unset($request->_token);
@@ -53,7 +50,6 @@ class TodoController extends Controller
 
 	public function delete(Request $request)
 	{
-		$todo = Todo::find($request->id);
 		$request->user()->todo()->where('flg', 0)->delete();
 		return redirect('/todo');
 	}
