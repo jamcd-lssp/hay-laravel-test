@@ -41,10 +41,16 @@ class TodoController extends Controller
 	public function update(Request $request)
 	{
 		$this->validate($request, todo::$rules);
-		$form = $request->all();
-		unset($form['_token']);
-		$form['flg'] = 0;
-		$request->user()->fill($form)->save();
+		// $form = $request->all();
+		// unset($form['_token']);
+		// $form['flg'] = 0;
+		// $request->user()->fill($form)->save();
+		$request->user()->todo()->create([
+			'name' => $request->name,
+			'content' => $request->content,
+			'title' => $request->title,
+			'flg' => 0,
+		]);
 		return redirect('/todo');
 	}
 
