@@ -12,8 +12,8 @@ class TodoController extends Controller
     {
     	if (Auth::check()) {
     		$user = Auth::user();
-    		$runningItems = Todo::where('flg', 1)->get();
-	    	$doneItems = Todo::where('flg', 0)->get();
+    		$runningItems = Auth::user()->name->Todo::where('flg', 1)->get();
+	    	$doneItems = Auth::user()->name->Todo::where('flg', 0)->get();
 	    	$param = [
 	    		'runningItems' => $runningItems,
 	    		'doneItems' => $doneItems,
@@ -48,7 +48,7 @@ class TodoController extends Controller
 	public function delete(Request $request)
 	{
 		$todo = Todo::find($request->id);
-		$todo->delete();
+		Auth::user()->name->Todo::where('flg', 0)->delete();
 		return redirect('/todo');
 	}
 
