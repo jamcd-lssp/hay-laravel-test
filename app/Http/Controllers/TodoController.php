@@ -40,9 +40,9 @@ class TodoController extends Controller
 
 	public function update(Request $request)
 	{
-		$todo = $request->user()->todo();
-		$todo->flg = 0;
-		$todo->fill($todo)->save();
+		$list = $request->user()->todo();
+		$list->flg = 0;
+		$todo->fill($list)->save();
 		return redirect('/todo');
 	}
 
