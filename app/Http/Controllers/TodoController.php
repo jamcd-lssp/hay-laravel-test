@@ -30,6 +30,7 @@ class TodoController extends Controller
 		$this->validate($request, todo::$rules);
 		$request->user()->todo()->create([
 			'name' => $request->name,
+			'content' => $request->content,
 			'title' => $request->title,
 			'flg' => 1,
 		]);
@@ -42,6 +43,7 @@ class TodoController extends Controller
 		$this->validate($request, todo::$rules);
 		$request->user()->todo()->create([
 			'name' => $request->name,
+			'content' => $request->content,
 			'title' => $request->title,
 			'flg' => 0,
 		]);
