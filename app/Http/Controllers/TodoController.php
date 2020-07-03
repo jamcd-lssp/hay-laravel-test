@@ -41,7 +41,7 @@ class TodoController extends Controller
 	public function update(Request $request)
 	{
 		$this->validate($request, todo::$rules);
-		$request->user()->todo()->where('flg', 1)->update('flg', 0);
+		$request->user()->todo()->where('flg', 1)->update('flg', 0)->save();
 		return redirect('/todo');
 	}
 
