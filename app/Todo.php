@@ -11,7 +11,7 @@ class Todo extends Model
     protected $primaryKey = 'user_id';
     public $incrementing = false;
     protected $keyType = 'string';
-    protected $fillable = ['title', 'content', 'flg'];
+    protected $fillable = ['title', 'content',];
     public static $rules = [
     	'title' => 'required',
     	'content' => 'required',
