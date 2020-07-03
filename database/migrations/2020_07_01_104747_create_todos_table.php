@@ -15,11 +15,11 @@ class CreateTodosTable extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->string('title');
             $table->string('content');
-            $table->integer('flg')->nullable(false)->change();
+            $table->string('flg')->nullable(false)->change();
             $table->timestamps();
         });
     }
