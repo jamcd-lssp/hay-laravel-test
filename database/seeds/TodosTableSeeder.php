@@ -17,7 +17,7 @@ class TodosTableSeeder extends Seeder
         	'name' => 'test',
         	'title' => 'やりたいことを入力するとここに表示されます！',
         	'content' => 'やり終えたら終了を押してね。',
-        	'flg' => '1',
+        	'flg' => 1,
 		];
 		DB::table('todos')->insert($param);
 
@@ -26,7 +26,7 @@ class TodosTableSeeder extends Seeder
         	'name' => 'hay',
         	'title' => '早起き',
         	'content' => '朝活！',
-        	'flg' => '0',
+        	'flg' => 0,
 		];
 		DB::table('todos')->insert($param);
     }
