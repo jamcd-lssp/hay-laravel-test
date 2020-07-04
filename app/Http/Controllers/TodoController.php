@@ -41,7 +41,29 @@ class TodoController extends Controller
         return redirect()->route('todo.index', [
             'id' => $current_folder->id,
         ]);
+    }
 
+    public function showEditForm(int $id, int $task_id)
+    {
+        $todo = Todo::find($task_id);
+
+        return view('todo/edit', [
+            'task' => $task,
+        ]);
+    }
+
+    public function edit(int $id, int $task_id, EditTask $request)
+    {
+        $task = Task::find($task_id);
+
+        $task->title = $request->title;
+        $task->status = $request->status;
+        $task->due_date = $request->due_date;
+        $task->save();
+
+        return redirect()->route('todo.index', [
+            'id' => $task->folder_id,
+        ]);
     }
 	public function postAuth(Request $request)
 	{
