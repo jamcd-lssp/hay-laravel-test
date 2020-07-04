@@ -29,9 +29,8 @@ class Task extends Model
     	$status = $this->attributes['status'];
 
     	if (!isset(self::STATUS[$status])) {
-    		rerurn '';
+    		return '';
     	}
-
     	return self::STATUS[$status]['class'];
     }
 
