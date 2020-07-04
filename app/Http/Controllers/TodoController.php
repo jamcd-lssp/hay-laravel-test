@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Todo;
 use App\Task;
-use App\Http\Request\CreateTask;
+use App\Http\Requests\CreateFolder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,7 +36,7 @@ class TodoController extends Controller
         $task->title = $request->title;
         $task->due_date = $request->due_date;
 
-        $current_folder->tasks()->save($task);
+        $current_folder->tasks()->save();
 
         return redirect()->route('todo.index', [
             'id' => $current_folder->id,
