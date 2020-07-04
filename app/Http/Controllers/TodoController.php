@@ -49,7 +49,7 @@ class TodoController extends Controller
         $todo = Todo::find($task_id);
 
         return view('todo/edit', [
-            'task' => $task,
+            'task' => $todo,
         ]);
     }
 
