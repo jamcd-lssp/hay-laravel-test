@@ -32,19 +32,20 @@
 							@endforeach
 						</div>
 					@endif
-					<form action="{{ route('todo.create', ['id' => $folder_id]) }}" post></form>
-					@csrf
-					<div>
-						<label for="title">タイトル</label>
-						<input type="text" name="title" id="title" value="{{ old('title') }}">
-					</div>
-					<div>
-						<label for="due_date">期限</label>
-						<input type="text" name="due_date" id="due_date" value="{{ old('due_date') }}">
-					</div>
-					<div>
-						<button type="submit">送信</button>
-					</div>
+					<form action="{{ route('todo.create', ['id' => $folder_id]) }}" method="post">
+						@csrf
+						<div>
+							<label for="title">タイトル</label>
+							<input type="text" name="title" id="title" value="{{ old('title') }}">
+						</div>
+						<div>
+							<label for="due_date">期限</label>
+							<input type="text" name="due_date" id="due_date" value="{{ old('due_date') }}">
+						</div>
+						<div>
+							<bu	tton type="submit">送信</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</nav>
