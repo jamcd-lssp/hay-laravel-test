@@ -24,7 +24,7 @@ class CreateFolder extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title' => 'required|max:20',
         ];
     }
 
@@ -32,13 +32,6 @@ class CreateFolder extends FormRequest
     {
         return [
             'title' => 'フォルダ名',
-        ];
-    }
-
-    public function rules()
-    {
-        return [
-            'title' => 'required|max:20',
         ];
     }
 }
