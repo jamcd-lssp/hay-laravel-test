@@ -33,7 +33,7 @@ class TodoController extends Controller
     {
         $current_folder = Todo::find($id);
         $task = new Task();
-        $task->title = $requesu->title;
+        $task->title = $request->title;
         $task->due_date = $request->due_date;
 
         $current_folder->tasks()->save($task);
