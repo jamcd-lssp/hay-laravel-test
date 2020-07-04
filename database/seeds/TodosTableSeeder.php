@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,22 +13,14 @@ class TodosTableSeeder extends Seeder
      */
     public function run()
     {
-        $param = [
-        	'user_id' => 1,
-        	'name' => 'test',
-        	'title' => 'やりたいことを入力するとここに表示されます！',
-        	'content' => 'やり終えたら終了を押してね。',
-        	'flg' => 1,
-		];
-		DB::table('todos')->insert($param);
+        $titles = ['プライベート', '仕事', '旅行'];
 
-		$param = [
-			'user_id' => 1,
-        	'name' => 'hay',
-        	'title' => '早起き',
-        	'content' => '朝活！',
-        	'flg' => 0,
-		];
-		DB::table('todos')->insert($param);
+        foreach ($titles as $title) {
+        	DB::table('folders')->isert({
+        		'title' => $title,
+        		'created_at' => Carbon::now(),
+        		'updated_at' => Carbon::now(),
+        	});
+        }
     }
 }

@@ -13,20 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('todo', 'TodoController@index')
-	->middleware('auth');
-Route::get('todo/auth', 'TodoController@getAuth');
-Route::post('todo', 'TodoController@create');
-Route::post('todo/update', 'TodoController@update');
-Route::post('todo/delete', 'TodoController@delete');
-Route::post('todo/auth', 'TodoController@postAuth');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/todo/{id}/tasks', 'TodoController@index')->name('todo.index');
+Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
+Route::post('/folders/create', 'FolderController@create');
+Route::get('/folders/{id}/tasks/create', 'TodoController@showCreateForm')->name('todo.create');
+Route::post('/folders/{id}/tasks/create', 'TaskController@create');

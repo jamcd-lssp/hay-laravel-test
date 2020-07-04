@@ -8,21 +8,8 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Todo extends Model
 {
-    protected $primaryKey = 'user_id';
-    protected $fillable = ['title', 'name', 'content', 'flg'];
-    public static $rules = [
-    	'title' => 'required',
-    	'content' => 'required',
-        'flg' => 'required',
-    ];
-
-    public function scopeFlg($query, $num)
+    public function tasks()
     {
-    	return $query->where('flg', $num);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
+        return $this->hasMany('App\Task');
     }
 }

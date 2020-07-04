@@ -3,61 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Todo;
+use App\Task;
+use App\Http\Request\CreateTask;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
 {
-    public function index()
+    public function index(int $id)
     {
-    	if (Auth::check()) {
-    		$user = Auth::user();
-    		$runningItems = Todo::flg(1)->get();
-	    	$doneItems = Todo::flg(0)->get();
-	    	$param = [
-	    		'runningItems' => $runningItems,
-	    		'doneItems' => $doneItems,
-	    		'user' => $user,
-	    	];
-    		return view('todo.index', $param);
-    	} else {
-    		return redirect('/login');
-    	}
+    	$folders = Todo::all();
+    	$current_folder = Todo::find($id);
+    	$tasks = $current_folder->tasks()->get();
+    	return view('todo/index',[
+    		'folders' => $folders,
+    		'current_folder_id' => $current_folder->$id,
+    		'tasks' => $tasks,
+    	]);
     }
 
-	public function create(Request $request)
-	{
-		$this->validate($request, todo::$rules);
-		$request->user()->todo()->create([
-			'name' => $request->name,
-			'content' => $request->content,
-			'title' => $request->title,
-			'flg' => 1,
-		]);
-		unset($request->_token);
-		return redirect('/todo');
-	}
+    public function showCreateForm(int $id)
+    {
+    	return view('tasks/create', [
+    		'folder_id' => $id
+    	]);
+    }
 
-	public function update(Request $request)
-	{
-		$this->validate($request, todo::$rules);
-		$this->where('user_id')->update('flg', 0)->save();
-		return redirect('/todo');
-	}
+    public function create(int $id, CreateTask $request)
+    {
+        $current_folder = Todo::find($id)
+        $task = new Task();
+        $task->title = $requesu->title;
+        $task->due_date = $request->due_date;
 
-	public function delete(Request $request)
-	{
-		$this->validate($request, todo::$rules);
-		$this->where('flg', 0)->delete();
-		return redirect('/todo');
-	}
+        $current_folder->tasks()->save($task);
 
-	public function getAuth(Request $request)
-	{
-		$param = ['message' =>'ログインして下さい。'];
-		return view('todo.auth', $param);
-	}
+        return redirect()->route('todo.index', [
+            'id' => $current_folder->id,
+        ]);
 
+    }
 	public function postAuth(Request $request)
 	{
 		$email = $request->email;
