@@ -24,7 +24,7 @@ class TodoController extends Controller
 
     public function showCreateForm(int $id)
     {
-    	return view('tasks/create', [
+    	return view('todo/create', [
     		'folder_id' => $id
     	]);
     }
