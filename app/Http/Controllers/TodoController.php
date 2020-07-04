@@ -46,10 +46,10 @@ class TodoController extends Controller
 
     public function showEditForm(int $id, int $task_id)
     {
-        $todo = Todo::find($task_id);
+        $task = Task::find($task_id);
 
         return view('todo/edit', [
-            'task' => $todo,
+            'task' => $task,
         ]);
     }
 
