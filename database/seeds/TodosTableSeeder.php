@@ -16,7 +16,7 @@ class TodosTableSeeder extends Seeder
         $titles = ['プライベート', '仕事', '旅行'];
 
         foreach ($titles as $title) {
-        	DB::table('folders')->insert([
+        	DB::table('todos')->insert([
         		'title' => $title,
         		'created_at' => Carbon::now(),
         		'updated_at' => Carbon::now(),
