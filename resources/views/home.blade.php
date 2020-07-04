@@ -1,21 +1,29 @@
-@extends('layouts.app')
+@extends('layouts.hellotodo')
+
+@section('title', 'TodoApp')
+
+@section('menu')
+    @parent
+    @if (Auth::check())
+    <div class="user-check">
+        <p>ようこそ！{{Auth::user()->name}}さん。</p>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+              @csrf
+              <input type="submit" value="ログアウト">
+            </form>
+        @else
+            <p>※ログインしていません。(<a href="/login"> ログイン</a><br>
+            <a href="/register">登録</a>)</p>
+        @endif
+    </div>
+@endsection
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('ログインしました!') }}
-                    @extends('layout')
+                <div class="card-header">{{ __('ダッシュボード') }}</div>
                     <div class="panel-heading">
                         まずはフォルダを作成しましょう
                     </div>
@@ -31,4 +39,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    <address>Copyright&nbsp;2020&nbsp;honda.ALL&nbsp;Right&nbsp;Reserved.</address>
 @endsection
