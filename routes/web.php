@@ -12,9 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'auth'], function() {
+	Route::get('/', 'HomeController@index')->name('home');
+	Route::get('/todo/{id}/tasks', 'TodoController@index')->name('todo.index')
+	Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
+	Route::post('/folders/create', 'FolderController@create');
+	Route::get('/folders/{id}/tasks/create', 'TodoController@showCreateForm')->name('todo.create');
+	Route::post('/folders/{id}/tasks/create', 'TaskController@create');
+}
 
-Route::get('/todo/{id}/tasks', 'TodoController@index')->name('todo.index');
-Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
-Route::post('/folders/create', 'FolderController@create');
-Route::get('/folders/{id}/tasks/create', 'TodoController@showCreateForm')->name('todo.create');
-Route::post('/folders/{id}/tasks/create', 'TaskController@create');
+Auth::routes();
