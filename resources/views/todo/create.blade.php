@@ -43,7 +43,7 @@
 							<input type="text" name="due_date" id="due_date" value="{{ old('due_date') }}">
 						</div>
 						<div>
-							<bu	tton type="submit">送信</button>
+							<button type="submit">送信</button>
 						</div>
 					</form>
 				</div>
