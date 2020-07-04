@@ -35,7 +35,7 @@
 				<div>
 					<p>フォルダを追加する</p>
 					<div>
-						<form action="{{ route('folderes.create') }}" method="post">
+						<form action="{{ route('folders.create') }}" method="post">
 							@csrf
 							<div>
 								<label for="title">フォルダ名
