@@ -1,5 +1,7 @@
 @extends('layouts.hellotodo')
 
+@section('title', 'TodoApp')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
