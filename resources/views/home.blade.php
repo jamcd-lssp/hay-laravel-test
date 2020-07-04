@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.hellotodo')
 
 @section('content')
 <div class="container">
@@ -15,7 +15,17 @@
                     @endif
 
                     {{ __('ログインしました!') }}
-                    <a href="todo/">ToDoList</a>
+                    @extends('layout')
+                    <div class="panel-heading">
+                        まずはフォルダを作成しましょう
+                    </div>
+                    <div class="panel-body">
+                    <div class="text-center">
+                      <a href="{{ route('folders.create') }}" class="btn btn-primary">
+                        フォルダ作成ページへ
+                      </a>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
