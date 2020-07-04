@@ -18,7 +18,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
 	Route::post('/folders/create', 'FolderController@create');
 	Route::get('/folders/{id}/tasks/create', 'TodoController@showCreateForm')->name('todo.create');
-	Route::post('/folders/{id}/tasks/create', 'TaskController@create');
+	Route::post('/folders/{id}/tasks/create', 'TodoController@create');
 });
 
 Auth::routes();
