@@ -21,7 +21,7 @@ class CreateTasksTable extends Migration
             $table->integer('status')->default(1);
             $table->timestamps();
 
-            $table->foreign('folder_id')->refernces('id')->on('todos');
+            $table->foreign('folder_id')->references('id')->on('todos');
         });
     }
 
