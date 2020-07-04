@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Usser;
+use App\Task;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
