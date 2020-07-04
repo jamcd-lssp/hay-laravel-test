@@ -31,7 +31,7 @@
 							@endforeach
 						</div>
 					@endif
-					<form action="{{ route('todo.edit', ['id' => $task->folder_id, 'task_id => $task->id']) }}" method="post">
+					<form action="{{ route('todo.edit', ['id' => $task->folder_id, 'task_id' => $task->id]) }}" method="post">
 					@csrf
 					<div>
 						<label for="title">タイトル</label>
