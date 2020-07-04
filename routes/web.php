@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['middleware' => 'auth'], function() {
 	Route::get('/', 'HomeController@index')->name('home');
+	Route::get('/todo', 'TodoController@index')->name('todo.index');
 	Route::get('/todo/{id}/tasks', 'TodoController@index')->name('todo.index');
 	Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
 	Route::post('/folders/create', 'FolderController@create');
