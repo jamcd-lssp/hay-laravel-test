@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\Todo;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -39,9 +38,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function todo()
+    public function todos()
     {
-        return $this->hasMany(Todo::class);
+        return $this->hasMany('App\Todo');
     }
 
 }
