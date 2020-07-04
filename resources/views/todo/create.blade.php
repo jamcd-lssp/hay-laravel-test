@@ -6,7 +6,7 @@
 	@parent
 	@if (Auth::check())
 	<div class="user-check">
-		<p>USER:{{$user->name.'('. $user->email.')'}}</p>
+		<p>ようこそ！{{Auth::user()->name}}さん。</p>
 		    <form id="logout-form" action="{{ route('logout') }}" method="POST">
 		      @csrf
 		      <input type="submit" value="ログアウト">
