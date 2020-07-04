@@ -36,7 +36,7 @@ class TodoController extends Controller
         $task->title = $request->title;
         $task->due_date = $request->due_date;
 
-        $current_folder->tasks()->save();
+        $current_folder->tasks()->save($task);
 
         return redirect()->route('todo.index', [
             'id' => $current_folder->id,
