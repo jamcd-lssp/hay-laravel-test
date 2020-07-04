@@ -13,7 +13,7 @@ class TodoController extends Controller
 {
     public function index(int $id)
     {
-    	$folders = Todo::all();
+    	$folders = Auth::user()->todos()->get();
     	$current_folder = Todo::find($id);
     	$tasks = $current_folder->tasks()->get();
     	return view('todo/index',[

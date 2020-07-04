@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CreateFolder;
 
 class FolderController extends Controller
@@ -17,7 +18,7 @@ class FolderController extends Controller
     {
     	$todo = new Todo();
     	$todo->title = $request->title;
-    	$todo->save();
+    	Auth::user()->todos->save($folder);
 
     	return redirect()->route('todo.index', [
     		'id' => $todo->id,
