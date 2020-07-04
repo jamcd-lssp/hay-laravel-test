@@ -51,10 +51,6 @@
 			</nav>
 		</div>
 	</div>
-	@else
-		<p>※ログインしていません。(<a href="/login"> ログイン</a><br>
-		<a href="/register">登録</a>)</p>
-	@endif
 @endsection
 
 @section('footer')
