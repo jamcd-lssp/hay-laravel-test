@@ -14,7 +14,7 @@ class TodoController extends Controller
     {
     	$folders = Todo::all();
     	$current_folder = Todo::find($id);
-    	$tasks = $current_folder->tasks()->get();
+    	var_dump($current_folder);
     	return view('todo/index',[
     		'folders' => $folders,
     		'current_folder_id' => $current_folder->$id,
