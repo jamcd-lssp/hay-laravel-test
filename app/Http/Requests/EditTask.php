@@ -37,7 +37,7 @@ class EditTask extends CreateTask
 
         $status_labels = array_map(function($item) {
             return $item['label'];
-        }, task::STATUS);
+        }, Task::STATUS);
 
         $status_labels = implode('、', $status_labels);
 

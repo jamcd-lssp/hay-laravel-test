@@ -66,6 +66,7 @@ class TodoController extends Controller
             'id' => $task->folder_id,
         ]);
     }
+
 	public function postAuth(Request $request)
 	{
 		$email = $request->email;
