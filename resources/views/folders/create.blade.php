@@ -21,35 +21,31 @@
 @section('content')
 	@parent
 	<div>
-		@if($errors->any())
+		<nav>
 			<div>
-				<ul>
-					@foreach($errors->all() as $message)
-						<li>{{ $message }}</li>
-					@endforeach
-				</ul>
-			</div>
-		@endif
-		<div>
-			<nav>
+				<p>フォルダを追加する</p>
+				<div class="panel-body">
+	            @if($errors->any())
+	              <div class="alert alert-danger">
+	                @foreach($errors->all() as $message)
+	                  <p>{{ $message }}</p>
+	                @endforeach
+	              </div>
+	            @endif
 				<div>
-					<p>フォルダを追加する</p>
-					<div>
-						<form action="{{ route('folders.create') }}" method="post">
-							@csrf
-							<div>
-								<label for="title">フォルダ名
-								</label>
-								<input type="text" class="form-controll" name="title" id="title" value="{{ old('title') }}">
-							</div>
-							<div>
-								<button type="submit">送信</button>
-							</div>
-						</form>
-					</div>
+					<form action="{{ route('folders.create') }}" method="post">
+						@csrf
+						<div>
+							<label for="title">フォルダ名</label>
+							<input type="text" class="form-controll" name="title" id="title" value="{{ old('title') }}">
+						</div>
+						<div>
+							<button type="submit">送信</button>
+						</div>
+					</form>
 				</div>
-			</nav>
-		</div>
+			</div>
+		</nav>
 	</div>
 @endsection
 
