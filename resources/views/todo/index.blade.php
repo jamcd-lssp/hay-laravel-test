@@ -28,7 +28,7 @@
 			</div>
 			<div class="list-group">
 				@foreach($folders as $folder)
-					<a href="{{ route('todo.index', ['id' => $tasks->id]) }}"
+					<a href="{{ route('todo.index', ['id' => $folder->id]) }}"
 						class=" {{ $current_folder_id === $folder->id ? 'active' : '' }}"></a>
 					{{ $todo->title }}
 				@endforeach
