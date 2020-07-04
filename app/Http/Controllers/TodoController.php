@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Todo;
 use App\Task;
 use App\Http\Requests\CreateFolder;
+use App\Http\Requests\EditTask;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
