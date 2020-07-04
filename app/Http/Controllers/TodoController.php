@@ -29,7 +29,7 @@ class TodoController extends Controller
     	]);
     }
 
-    public function create(int $id, CreateTask $request)
+    public function create(int $id, CreateFolder $request)
     {
         $current_folder = Todo::find($id);
         $task = new Task();
