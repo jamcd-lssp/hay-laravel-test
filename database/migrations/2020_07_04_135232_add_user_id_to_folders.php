@@ -28,7 +28,7 @@ class AddUserIdToFolders extends Migration
     public function down()
     {
         Schema::table('todos', function (Blueprint $table) {
-            $tabel->dropculumn('user_id');
+            $table->dropculumn('user_id');
         });
     }
 }
