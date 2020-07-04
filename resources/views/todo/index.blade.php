@@ -53,7 +53,7 @@
                   <span class="label {{ $task->status_class }}">{{ $task->status_label }}</span>
                 </td>
                 <td>{{ $task->formatted_due_date }}</td>
-                <td><a href="{{ route('todo.edit', ['id' => $task->folder_id, 'task_id' => $task_id]) }}">編集</a></td>
+                <td><a href="{{ route('todo.edit', ['id' => $task->folder_id, 'task_id' => $task->id]) }}">編集</a></td>
               </tr>
             @endforeach
 			</tbody>
