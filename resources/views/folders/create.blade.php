@@ -35,7 +35,7 @@
 				<div>
 					<form action="{{ route('folders.create') }}" method="post">
 						@csrf
-						<div>
+						<div class="form-group">
 							<label for="title">フォルダ名</label>
 							<input type="text" class="form-controll" name="title" id="title" value="{{ old('title') }}">
 						</div>
