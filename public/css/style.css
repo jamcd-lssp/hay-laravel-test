@@ -139,11 +139,20 @@ h2{
     width: 70%;
     margin: 100px auto;
 }
-.list-create{
-    float: left;
+.list-groupe{
+    border: 1px solid #000;
 }
 li.todo{
     list-style: circle;
+}
+li{
+    border-bottom: 1px solid #000
+}
+li a:hover{
+    text-decoration: none;
+}
+li a:active{
+    color: #222;
 }
 form{
     width: 300px;
@@ -160,16 +169,24 @@ textarea[name='content']{
 }
 input[type='submit']{
     height: 25px;
-    width: 50px;
+    width: 100px;
     background-color: #fff;
     border: 1px solid;
 }
 table{
+    width: 80%;
     border: 1px solid #000;
     border-collapse: collapse;
 }
 th{
-    background-color: blue;
+    color: #fff;
+    background-color: #ccc;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+td{
+    border: 1px solid #000;
+    border-collapse: collapse;
 }
 footer{
     text-align: center;
