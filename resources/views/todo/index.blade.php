@@ -23,16 +23,21 @@
 	<div>
 		<nav>
 			<div class="panel">
-				<p>フォルダ</p>
+				<h2>フォルダ</h2>
 				<a href="{{ route('folders.create') }}">フォルダを追加する</a>
 			</div>
 			<div class="list-group">
-				@foreach($folders as $folder)
-					<a href="{{ route('todo.index', ['id' => $folder->id]) }}"
-						class="list-group-item" {{ $current_folder_id === $folder->id ? 'active' : '' }}">
-					{{ $folder->title }}
-					</a>
-				@endforeach
+				<h2>フォルダ一覧</h2>
+				<ul>
+					@foreach($folders as $folder)
+					<li>
+						<a href="{{ route('todo.index', ['id' => $folder->id]) }}"
+							class="list-group-item" {{ $current_folder_id === $folder->id ? 'active' : '' }}">
+						{{ $folder->title }}
+						</a>
+					</li>
+					@endforeach
+				</ul>
 			</div>
 		</nav>
 		<div class="tasks">

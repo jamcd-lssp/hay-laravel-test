@@ -142,9 +142,6 @@ h2{
 .list-create{
     float: left;
 }
-li{
-    list-style:none;
-}
 li.todo{
     list-style: circle;
 }
@@ -166,6 +163,13 @@ input[type='submit']{
     width: 50px;
     background-color: #fff;
     border: 1px solid;
+}
+table{
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+th{
+    background-color: blue;
 }
 footer{
     text-align: center;
