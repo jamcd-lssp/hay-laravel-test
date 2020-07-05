@@ -198,6 +198,7 @@ td{
 .task-create{
     width: 80%;
     margin: 0 auto;
+    text-align: center;
 }
 .task-create-form{
     width: 400px;
