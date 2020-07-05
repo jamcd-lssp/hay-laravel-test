@@ -190,9 +190,11 @@ td{
 }
 .task-create{
     width: 80%;
+}
+.task-create-form{
+    width: 100%;
     text-align: center;
 }
-
 footer{
     text-align: center;
 }

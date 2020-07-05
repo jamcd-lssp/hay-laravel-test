@@ -24,7 +24,7 @@
 		<nav>
 			<div class="task-create">
 				<p>タスクを追加する</p>
-				<div>
+				<div class="task-create-form">
 					@if($errors->any())
 						<div>
 							@foreach($errors->all() as $message)
