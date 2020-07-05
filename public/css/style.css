@@ -169,7 +169,6 @@ textarea[name='content']{
 input[type='submit']{
     height: 30px;
     width: 100px;
-    margin-top: 10px;
     background-color: #fff;
     border: 1px solid;
     text-align: right;
@@ -201,6 +200,10 @@ td{
 .task-create-form{
     margin: 0 auto;
     text-align: center;
+}
+button{
+    margin-top: 10px;
+    text-align: right;
 }
 footer{
     text-align: center;
