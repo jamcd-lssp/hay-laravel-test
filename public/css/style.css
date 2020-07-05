@@ -156,13 +156,8 @@ li a:active{
     color: #222;
 }
 form{
-    width: 300px;
-    text-align: center;
-}
-input[name='title']{
-    margin-top: 50px;
-    margin-bottom: 10px;
-    width: 300px;
+    width: 400px;
+    text-align: left;
 }
 textarea[name='content']{
     height: 100px;
@@ -193,6 +188,11 @@ td{
 .tasks{
     margin-top: 20px;
 }
+.task-create{
+    width: 80%;
+    text-align: center;
+}
+
 footer{
     text-align: center;
 }

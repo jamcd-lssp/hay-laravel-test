@@ -22,7 +22,7 @@
 	@parent
 	<div>
 		<nav>
-			<div class="panel">
+			<div class="task-create">
 				<p>タスクを追加する</p>
 				<div>
 					@if($errors->any())
