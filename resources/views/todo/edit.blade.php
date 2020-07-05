@@ -58,17 +58,8 @@
 			</div>
 		</nav>
 	</div>
-	<script src="https://mpmdn.com/flatpickr/dist/flatpickr.min.js"></script>
-	<script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
-	<script>
-		flatpickr(document.getElementById('due_date'), {
-			locale: 'ja',
-			dateFormat: 'Y/m/d',
-			minDate: new Date()
-		});
-	</script>
 @endsection
 
 @section('footer')
 	<address>Copyright&nbsp;2020&nbsp;honda.ALL&nbsp;Right&nbsp;Reserved.</address>
-@endsection@extends('layouts.hellotodo')
+@endsection
