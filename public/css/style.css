@@ -146,6 +146,7 @@ li.todo{
     list-style: circle;
 }
 li{
+    width: 400px;
     border-bottom: 1px solid #000
 }
 li a:hover{
@@ -179,14 +180,18 @@ table{
     border-collapse: collapse;
 }
 th{
-    color: #fff;
+    color: #000;
     background-color: #ccc;
     border: 1px solid #000;
     border-collapse: collapse;
 }
 td{
+    text-align: center;
     border: 1px solid #000;
     border-collapse: collapse;
+}
+.tasks{
+    margin-top: 20px;
 }
 footer{
     text-align: center;
