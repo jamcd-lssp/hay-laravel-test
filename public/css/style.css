@@ -102,7 +102,7 @@ hr {
 input, select {
     vertical-align:middle;
 }
-/*ここまでがリセットスタイル*************************************************************/
+
 body{
 	line-height: 1.5;
 	margin: 0 auto;
@@ -159,18 +159,20 @@ form.create{
     text-align: center;
 }
 .form-group{
-    width: 400px;
     margin: 0 auto;
+    text-align: left;
 }
 textarea[name='content']{
     height: 100px;
     width: 300px;
 }
 input[type='submit']{
-    height: 25px;
+    height: 30px;
     width: 100px;
+    margin-top: 10px;
     background-color: #fff;
     border: 1px solid;
+    text-align: right;
 }
 table{
     width: 80%;
@@ -192,14 +194,13 @@ td{
     margin-top: 20px;
 }
 .task-create{
-    width: 80%;
+    width: 150px;
     margin: 0 auto;
     text-align: center;
 }
 .task-create-form{
-    width: 400px;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 footer{
     text-align: center;
