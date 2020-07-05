@@ -38,7 +38,7 @@
 						<input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
 						<label for="due_date">期限</label><br>
 						<input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}"><br>
-						<button type="submit">送信</button>
+						<button class="add-task" type="submit">送信</button>
 					</div>
 				</form>
 			</div>

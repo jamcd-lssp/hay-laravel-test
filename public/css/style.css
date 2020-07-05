@@ -201,7 +201,7 @@ td{
     margin: 0 auto;
     text-align: center;
 }
-button{
+button.addtask{
     margin-top: 10px;
     text-align: right;
 }
