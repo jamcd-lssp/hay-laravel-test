@@ -155,11 +155,12 @@ li a:hover{
 li a:active{
     color: #222;
 }
-form{
+form.create{
     width: 400px;
-}
-.form-group{
     text-align: right;
+}
+.form-group label{
+    text-align: left;
 }
 textarea[name='content']{
     height: 100px;
@@ -197,6 +198,7 @@ td{
 .task-create-form{
     width: 400px;
     margin: 0 auto;
+    text-align: center;
 }
 footer{
     text-align: center;

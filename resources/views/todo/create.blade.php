@@ -32,7 +32,7 @@
 							@endforeach
 						</div>
 					@endif
-					<form action="{{ route('todo.create', ['id' => $folder_id]) }}" method="post">
+					<form class="create" action="{{ route('todo.create', ['id' => $folder_id]) }}" method="post">
 						@csrf
 						<div class="form-group">
 							<label for="title">タイトル</label>
