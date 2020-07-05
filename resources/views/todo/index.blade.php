@@ -41,7 +41,7 @@
 			</div>
 		</nav>
 		<div class="tasks">
-			<h2>タスク一覧</h2>
+			<h2>タスク一覧(フォルダ名:{{ $folders->title }})</h2>
 			<a href="{{ route('todo.create', ['id' => $current_folder_id]) }}">タスクを追加する</a>
 			<table class="table">
 				<thead>
