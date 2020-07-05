@@ -102,7 +102,7 @@ hr {
 input, select {
     vertical-align:middle;
 }
-/*ã“ã“ã¾ã§ãŒãƒªã‚»ãƒƒãƒˆã‚¹ã‚¿ã‚¤ãƒ«*************************************************************/
+/*¤³¤³¤Ş¤Ç¤¬¥ê¥»¥Ã¥È¥¹¥¿¥¤¥ë*************************************************************/
 body{
 	line-height: 1.5;
 	margin: 0 auto;
@@ -197,7 +197,6 @@ td{
 .task-create-form{
     width: 400px;
     margin: 0 auto;
-    text-align: center;
 }
 footer{
     text-align: center;

@@ -37,12 +37,8 @@
 						<div class="form-group">
 							<label for="title">タイトル</label>
 							<input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
-						</div>
-						<div class="form-group">
 							<label for="due_date">期限</label>
 							<input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}">
-						</div>
-						<div>
 							<button type="submit">送信</button>
 						</div>
 					</form>
