@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Todo;
 use App\Task;
-use App\Http\Requests\CreateFolder;
+use App\Http\Requests\CreateTask;
 use App\Http\Requests\EditTask;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,7 +30,7 @@ class TodoController extends Controller
     	]);
     }
 
-    public function create(int $id, CreateFolder $request)
+    public function create(int $id, CreateTask $request)
     {
         $current_folder = Todo::find($id);
         $task = new Task();
