@@ -20,7 +20,7 @@
 
 @section('content')
 	@parent
-	<div>
+	<div class="folder-task">
 		<nav>
 			<div class="panel">
 				<h2>フォルダ</h2>

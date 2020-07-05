@@ -137,7 +137,10 @@ h2{
 }
 .to-do-list{
     margin: 100px auto;
-    padding: 0 100px;
+}
+.folder-task{
+    width: 80%;
+    margin: 0 auto;
 }
 .list-groupe{
     border: 1px solid #000;
