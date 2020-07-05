@@ -27,7 +27,7 @@
 				@if($errors->any())
 					<div>
 						@foreach($errors->all() as $message)
-						<p>{{ $message }}</p>
+							<p>{{ $message }}</p>
 						@endforeach
 					</div>
 				@endif

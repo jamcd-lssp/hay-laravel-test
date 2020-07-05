@@ -66,19 +66,4 @@ class TodoController extends Controller
             'id' => $task->folder_id,
         ]);
     }
-
-	public function postAuth(Request $request)
-	{
-		$email = $request->email;
-		$password = $request->password;
-		if (Auth::attempt([
-			'email' => $email,
-			'password' => $password,])){
-			$msg = 'ログインしました(' . Auth::user()->name .')';
-			return redirect('/todo');
-		} else {
-			$msg = 'ログインに失敗しました。';
-		}
-		return view('todo.auth', ['message' => $msg]);
-	}
 }
