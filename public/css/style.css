@@ -136,7 +136,7 @@ h2{
     height: 60px;
 }
 .to-do-list{
-    width: 80%;
+    width: 95%;
     margin: 100px auto;
 }
 .folder-task{
@@ -149,7 +149,7 @@ li.todo{
     list-style: circle;
 }
 li{
-    width: 370px;
+    width: 70%;
     border-bottom: 1px solid #000
 }
 li a:hover{
@@ -178,7 +178,7 @@ input[type='submit']{
     text-align: right;
 }
 table{
-    width: 80%;
+    width: 100%;
     border: 1px solid #000;
     border-collapse: collapse;
     text-align: center;
