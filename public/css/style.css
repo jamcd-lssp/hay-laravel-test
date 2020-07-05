@@ -139,6 +139,9 @@ h2{
     width: 95%;
     margin: 100px auto;
 }
+.form#logout-form{
+    text-align: center;
+}
 .folder-task{
     margin: 0 auto;
 }
@@ -171,10 +174,8 @@ textarea[name='content']{
     width: 300px;
 }
 input[type='submit']{
-    height: 30px;
     width: 100px;
     background-color: #fff;
-    border: 1px solid;
 }
 table{
     width: 100%;
