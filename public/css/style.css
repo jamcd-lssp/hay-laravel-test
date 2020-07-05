@@ -103,3 +103,47 @@ input, select {
     vertical-align:middle;
 }
 /*ここまでがリセットスタイル*************************************************************/
+body{
+	line-height: 1.5;
+	margin: 0 auto;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: #fff;
+    height: 60px;
+    width: 100%;
+    padding: 0 1rem;
+    box-shadow: 1px 2px 1px;
+    opacity: 0.8;
+}
+h1{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin-left: 35px;
+}
+h2{
+    font-size: 24px;
+    margin: 10px 0;
+    line-height: 1.2;
+}
+.user-check{
+    position: fixed;
+    right: 0;
+    top: 5px;
+    height: 60px;
+}
+.list-create{
+    float: left;
+}
+li{
+    list-style:none;
+}
+li.todo{
+    list-style: circle;
+}
+footer{
+    text-align: center;
+}
