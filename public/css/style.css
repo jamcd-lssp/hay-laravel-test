@@ -159,7 +159,7 @@ form{
     width: 400px;
 }
 .form-group{
-    text-align: left;
+    text-align: right;
 }
 textarea[name='content']{
     height: 100px;
@@ -195,7 +195,8 @@ td{
     margin: 0 auto;
 }
 .task-create-form{
-    width: 100%;
+    width: 400px;
+    margin: 0 auto;
     text-align: center;
 }
 footer{
