@@ -159,6 +159,10 @@ form.create{
     width: 400px;
     text-align: right;
 }
+.form-group{
+    width: 400px;
+    margin: 0 auto;
+}
 .form-group label{
     text-align: left;
 }
