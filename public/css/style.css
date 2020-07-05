@@ -104,7 +104,6 @@ input, select {
 }
 
 body{
-    max-width: 1000px;
 	line-height: 1.5;
 	margin: 0 auto;
 }
@@ -139,6 +138,7 @@ h2{
 }
 .to-do-list{
     width: 95%;
+    max-width: 1000px;
     margin: 100px auto;
 }
 .form#logout-form{
@@ -190,9 +190,6 @@ th{
     background-color: #ccc;
     border: 1px solid #000;
     border-collapse: collapse;
-}
-th:nth-child(1){
-    width: 150px;
 }
 th:nth-child(2){
     width: 50px;
