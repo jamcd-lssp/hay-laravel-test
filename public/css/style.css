@@ -137,6 +137,7 @@ h2{
 }
 .to-do-list{
     margin: 100px auto;
+    padding: 0 100px;
 }
 .list-groupe{
     border: 1px solid #000;
@@ -145,7 +146,7 @@ li.todo{
     list-style: circle;
 }
 li{
-    width: 400px;
+    width: 50%;
     border-bottom: 1px solid #000
 }
 li a:hover{
@@ -174,9 +175,10 @@ input[type='submit']{
     text-align: right;
 }
 table{
-    width: 80%;
+    width: 450px;
     border: 1px solid #000;
     border-collapse: collapse;
+    text-align: center;
 }
 th{
     color: #000;
@@ -201,7 +203,7 @@ td{
     margin: 0 auto;
     text-align: center;
 }
-button.addtask{
+button.add-task{
     margin-top: 10px;
     text-align: right;
 }
