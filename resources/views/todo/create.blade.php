@@ -21,30 +21,28 @@
 @section('content')
 	@parent
 	<div>
-		<nav>
-			<div class="task-create">
-				<p>タスクを追加する</p>
-				<div class="task-create-form">
-					@if($errors->any())
-						<div>
-							@foreach($errors->all() as $message)
-							<p>{{ $message }}</p>
-							@endforeach
-						</div>
-					@endif
-					<form class="create" action="{{ route('todo.create', ['id' => $folder_id]) }}" method="post">
-						@csrf
-						<div class="form-group">
-							<label for="title">タイトル</label><br>
-							<input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
-							<label for="due_date">期限</label><br>
-							<input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}"><br>
-							<button type="submit">送信</button>
-						</div>
-					</form>
-				</div>
+		<div class="task-create">
+			<p>タスクを追加する</p>
+			<div class="task-create-form">
+				@if($errors->any())
+					<div>
+						@foreach($errors->all() as $message)
+						<p>{{ $message }}</p>
+						@endforeach
+					</div>
+				@endif
+				<form class="create" action="{{ route('todo.create', ['id' => $folder_id]) }}" method="post">
+					@csrf
+					<div class="form-group">
+						<label for="title">タイトル</label><br>
+						<input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
+						<label for="due_date">期限</label><br>
+						<input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}"><br>
+						<button type="submit">送信</button>
+					</div>
+				</form>
 			</div>
-		</nav>
+		</div>
 	</div>
 @endsection
 

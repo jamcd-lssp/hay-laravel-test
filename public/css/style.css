@@ -136,7 +136,6 @@ h2{
     height: 60px;
 }
 .to-do-list{
-    width: 70%;
     margin: 100px auto;
 }
 .list-groupe{
@@ -156,15 +155,12 @@ li a:active{
     color: #222;
 }
 form.create{
-    width: 400px;
-    text-align: right;
+    width: 150px;
+    text-align: center;
 }
 .form-group{
     width: 400px;
     margin: 0 auto;
-}
-.form-group label{
-    text-align: left;
 }
 textarea[name='content']{
     height: 100px;
@@ -203,7 +199,7 @@ td{
 .task-create-form{
     width: 400px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 footer{
     text-align: center;
