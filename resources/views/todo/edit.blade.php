@@ -23,7 +23,7 @@
 	<div>
 		<nav>
 			<div class="panel">
-				<p>タスクを編集する</p>
+				<h2>タスクを編集する</h2>
 					@if($errors->any())
 						<div>
 							@foreach($errors->all() as $message)

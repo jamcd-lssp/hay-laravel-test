@@ -23,7 +23,7 @@
 	<div>
 		<nav>
 			<div>
-				<p>フォルダを追加する</p>
+				<h2>フォルダを追加する</h2>
 				<div class="panel-body">
 	            @if($errors->any())
 	              <div class="alert alert-danger">
@@ -38,8 +38,6 @@
 						<div class="form-group">
 							<label for="title">フォルダ名</label>
 							<input type="text" class="form-controll" name="title" id="title" value="{{ old('title') }}">
-						</div>
-						<div>
 							<button type="submit">送信</button>
 						</div>
 					</form>

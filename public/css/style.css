@@ -223,7 +223,7 @@ button.add-task{
     background-color: #ccc;
 }
 .task-controll a{
-    color: #FFF;
+    color: #000;
     text-decoration: none;
 }
 .task-controll a:hover{

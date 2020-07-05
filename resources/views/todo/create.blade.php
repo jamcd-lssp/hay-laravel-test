@@ -22,7 +22,7 @@
 	@parent
 	<div>
 		<div class="task-create">
-			<p>タスクを追加する</p>
+			<h2>タスクを追加する</h2>
 			<div class="task-create-form">
 				@if($errors->any())
 					<div>
@@ -37,7 +37,7 @@
 						<label for="title">タイトル</label><br>
 						<input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
 						<label for="due_date">期限</label><br>
-						<input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}"><br>
+						<input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}">
 						<button class="add-task" type="submit">送信</button>
 					</div>
 				</form>
