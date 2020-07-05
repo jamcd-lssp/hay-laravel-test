@@ -149,7 +149,7 @@ li.todo{
     list-style: circle;
 }
 li{
-    width: 50%;
+    width: 400px;
     border-bottom: 1px solid #000
 }
 li a:hover{
@@ -178,7 +178,7 @@ input[type='submit']{
     text-align: right;
 }
 table{
-    width: 450px;
+    width: 400px;
     border: 1px solid #000;
     border-collapse: collapse;
     text-align: center;
