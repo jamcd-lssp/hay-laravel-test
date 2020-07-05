@@ -220,6 +220,14 @@ button.add-task{
 }
 .task-controll{
     width: 50px;
+    background-color: #ccc;
+}
+.task-controll a{
+    color: #FFF;
+    text-decoration: none;
+}
+.task-controll a:hover{
+    text-decoration: underline;
 }
 footer{
     text-align: center;
