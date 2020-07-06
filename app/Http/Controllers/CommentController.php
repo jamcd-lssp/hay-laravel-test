@@ -19,6 +19,8 @@ class CommentController extends Controller
 		$comment = new Comment(['body' => $request->comment]);
 		$user->comments()->save($comment);
 
+		Mail::to($user)->send(new CommentPosted($user, $comment));
+
 		return redirect()->route('comment.thanks');
 	}
 
