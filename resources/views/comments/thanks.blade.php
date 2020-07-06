@@ -1,5 +1,23 @@
 @extends('layouts.hellotodo')
 
+@section('title', 'TodoApp')
+
+@section('menu')
+  @parent
+  @if (Auth::check())
+  <div class="user-check">
+    <p>ようこそ！{{Auth::user()->name}}さん。</p>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+          @csrf
+          <input type="submit" value="ログアウト">
+        </form>
+    @else
+      <p>※ログインしていません。(<a href="/login"> ログイン</a><br>
+      <a href="/register">登録</a>)</p>
+    @endif
+  </div>
+@endsection
+
 @section('content')
   <div class="container">
     <div class="row justify-content-center">
