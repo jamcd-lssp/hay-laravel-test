@@ -27,6 +27,10 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('/folders/{id}/tasks/{task_id}/edit', 'TodoController@showEditForm')->name('todo.edit');
 	Route::post('/folders/{id}/tasks/{task_id}/edit', 'TodoController@edit');
+
+	Route::get('/comment', 'CommentController@showForm')->name('comment');
+	Route::post('/comment', 'CommentController@create');
+	Route::get('/comment/thanks', 'CommentController@thanks')->name('comment.thanks');
 });
 
 Auth::routes();
