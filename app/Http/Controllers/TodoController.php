@@ -15,7 +15,7 @@ class TodoController extends Controller
     {
     	$folders = Auth::user()->todos()->get();
     	$current_folder = Todo::find($id);
-        $current_folder_title = Todo::where('title', $id)->get();
+        $current_folder_title = Todo::where('title', $current_folder)->get();
     	$tasks = $current_folder->tasks()->get();
     	return view('todo/index',[
     		'folders' => $folders,
