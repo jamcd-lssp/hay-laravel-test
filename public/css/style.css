@@ -163,6 +163,15 @@ li a:hover{
 li a:active{
     color: #222;
 }
+.panel-body {
+    width: 180px;
+    margin: 0 auto;
+    text-align: center;
+}
+.task-edit{
+    width: 180px;
+    margin: 0 auto;
+}
 form.create{
     width: 190px;
     margin: 0 auto;
@@ -210,13 +219,15 @@ td{
     margin: 0 auto;
 }
 .task-create-form{
-    width: 80%;
+    width: 180px;
     margin: 0 auto;
     text-align: center;
 }
-button.add-task{
+button{
+    display: block;
+    width: 60px;
     margin-top: 10px;
-    text-align: right;
+    text-align: center;
 }
 .task-controll{
     width: 50px;
