@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Mail\ResetPassword;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -46,5 +48,10 @@ class User extends Authenticatable
     public function comments()
     {
         return $this->hasMany('App\Models\Comment');
+    }
+
+    public function sendPassResetNotification($token)
+    {
+        Mail::to($this)->send(new ResetPassword($token));
     }
 }
