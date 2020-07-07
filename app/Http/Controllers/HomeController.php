@@ -14,10 +14,10 @@ class HomeController extends Controller
 
         if (is_null($folder)) {
             return view('home');
-        }
-
-        return redirect()->route('todo.index', [
+        } else {
+            return redirect()->route('todo.index', [
             'folder' => $folder->id,
-        ]);
+            ]);
+        }
     }
 }
