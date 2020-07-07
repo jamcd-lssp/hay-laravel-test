@@ -4,16 +4,20 @@ namespace App\Policies;
 
 use App\Todo;
 use App\User;
+use Illuminate\Auth\Access\HandlesAuthorization;
 
 class FolderPolicy
 {
+    use HandlesAuthorization;
+
     /**
      * Create a new policy instance.
-     *
-     * @return void
+     * @param User $user
+     * @param Folder $folder
+     * @return bool
      */
     public function view(User $user, Folder $folder)
     {
-        return $user->folder === $folder->user_id;
+        return $user->id === $folder->user_id;
     }
 }
