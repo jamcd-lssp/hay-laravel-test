@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Todo;
-use App\Models\User;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class FolderPolicy

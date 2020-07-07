@@ -3,7 +3,7 @@
 namespace App\Mail;
 
 use App\Models\Comment;
-use App\Models\User;
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
