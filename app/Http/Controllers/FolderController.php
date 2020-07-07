@@ -21,7 +21,7 @@ class FolderController extends Controller
     	Auth::user()->todos()->save($todo);
 
     	return redirect()->route('todo.index', [
-    		'folder' => $todo->id,
+    		'id' => $todo->id,
     	]);
     }
 }
