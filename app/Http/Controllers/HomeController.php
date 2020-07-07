@@ -17,7 +17,7 @@ class HomeController extends Controller
         }
 
         return redirect()->route('todo.index', [
-            'id' => $folder->id,
+            'folder' => $folder->id,
         ]);
     }
 }
