@@ -14,6 +14,6 @@ class FolderPolicy
      */
     public function view(User $user, Folder $folder)
     {
-        return $user->folder_id === $folder->user_id;
+        return $user->folder === $folder->user_id;
     }
 }
