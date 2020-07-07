@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,8 +32,7 @@ class HomeController extends Controller
         }
 
         return redirect()->route('todo.index', [
-            'id' => $folder->id,
-            'title' => $folder->title,
+            'folder' => $folder->id,
         ]);
     }
 }
