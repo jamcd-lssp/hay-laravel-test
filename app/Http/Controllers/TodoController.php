@@ -65,7 +65,7 @@ class TodoController extends Controller
         ]);
     }
 
-    public function checkRelation(Folder $folder, Task $task)
+    private function checkRelation(Folder $folder, Task $task)
     {
         if ($folder->id !== $task->folder_id) {
             abort(404);
