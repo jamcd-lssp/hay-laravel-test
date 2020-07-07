@@ -14,23 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['middleware' => 'auth'], function() {
 	Route::get('/', 'HomeController@index')->name('home');
-	Route::get('/folders/{id}/tasks', 'TodoController@index')->name('todo.index');
 
 	Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
 	Route::post('/folders/create', 'FolderController@create');
+	Route::group(['middleware' => 'can:view,folder'], function() {
+		Route::get('/folders/{folder}/tasks', 'TodoController@index')->name('todo.index');
 
-	Route::get('/folders/{id}/tasks/create', 'TodoController@showCreateForm')->name('todo.create');
-	Route::post('/folders/{id}/tasks/create', 'TodoController@create');
+		Route::get('/folders/{folder}/tasks/create', 'TodoController@showCreateForm')->name('todo.create');
+		Route::post('/folders/{folder}/tasks/create', 'TodoController@create');
 
-	Route::get('/folders/{id}/tasks/create', 'TodoController@showCreateForm')->name('todo.create');
-	Route::post('/folders/{id}/tasks/create', 'TodoController@create');
-
-	Route::get('/folders/{id}/tasks/{task_id}/edit', 'TodoController@showEditForm')->name('todo.edit');
-	Route::post('/folders/{id}/tasks/{task_id}/edit', 'TodoController@edit');
-
-	Route::get('/comment', 'CommentController@showForm')->name('comment');
-	Route::post('/comment', 'CommentController@create');
-	Route::get('/comment/thanks', 'CommentController@thanks')->name('comment.thanks');
+		Route::get('/folders/{folder}/tasks/{task}/edit', 'TodoController@showEditForm')->name('todo.edit');
+		Route::post('/folders/{folder}/tasks/{task}/edit', 'TodoController@edit');
+	});
 });
 
 Auth::routes();
