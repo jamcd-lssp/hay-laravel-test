@@ -39,7 +39,7 @@ class TodoController extends Controller
         $folder->tasks()->save($task);
 
         return redirect()->route('todo.index', [
-            'folder_id' => $folder->id,
+            'folder' => $folder->id,
         ]);
     }
 
