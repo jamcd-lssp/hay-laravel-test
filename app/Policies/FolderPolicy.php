@@ -4,12 +4,9 @@ namespace App\Policies;
 
 use App\Todo;
 use App\User;
-use Illuminate\Auth\Access\HandlesAuthorization;
 
 class FolderPolicy
 {
-    use HandlesAuthorization;
-
     /**
      * Create a new policy instance.
      *

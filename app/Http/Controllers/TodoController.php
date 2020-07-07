@@ -30,7 +30,7 @@ class TodoController extends Controller
     	]);
     }
 
-    public function create(Folder $folder, CreateFolder $request)
+    public function create(Folder $folder, CreateTask $request)
     {
         $task = new Task();
         $task->title = $request->title;
