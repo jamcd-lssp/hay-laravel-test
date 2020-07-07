@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
 {
+    /**
+    * タスク一覧
+    * @param Folder $folder
+    * @return \Illuminate\View\View
+    */
     public function index(Folder $folder)
     {
     	$folders = Auth::user()->todos()->get();
@@ -23,6 +28,11 @@ class TodoController extends Controller
     	]);
     }
 
+    /**
+    * タスク作成フォーム
+    * @param Folder $folder
+    * @return \Illuminate\View\View
+    */
     public function showCreateForm(Folder $folder)
     {
     	return view('todo/create', [
@@ -30,6 +40,12 @@ class TodoController extends Controller
     	]);
     }
 
+    /**
+     * タスク作成
+     * @param Folder $folder
+     * @param CreateTask $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function create(Folder $folder, CreateTask $request)
     {
         $task = new Task();
@@ -39,10 +55,16 @@ class TodoController extends Controller
         $folder->tasks()->save($task);
 
         return redirect()->route('todo.index', [
-            'folder' => $folder->id,
+            'folder_id' => $folder->id,
         ]);
     }
 
+    /**
+    * タスク編集フォーム
+    * @param Folder $folder
+    * @param Task $task
+    * @return \Illuminate\View\View
+    */
     public function showEditForm(Folder $folder, Task $task)
     {
         $this->checkRelation($folder, $task);
@@ -51,6 +73,13 @@ class TodoController extends Controller
         ]);
     }
 
+    /**
+    * タスク編集
+    * @param Folder $folder
+    * @param Task $task
+    * @param EditTask $request
+    * @return \Illuminate\Http\RedirectResponse
+    */
     public function edit(Folder $folder, Task $task, EditTask $request)
     {
         $this->checkRelation($folder, $task);
@@ -65,6 +94,11 @@ class TodoController extends Controller
         ]);
     }
 
+    /**
+    * フォルダとタスクの関連性があるか調べる
+    * @param Folder $folder
+    * @param Task $task
+    */
     private function checkRelation(Folder $folder, Task $task)
     {
         if ($folder->id !== $task->folder_id) {
