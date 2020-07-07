@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Todo;
+use App\Polices\FolderPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
