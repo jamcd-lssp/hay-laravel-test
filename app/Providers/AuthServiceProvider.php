@@ -15,7 +15,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-         Todo::class => FolderPolicy::class,
+        Todo::class => FolderPolicy::class,
     ];
 
     /**
