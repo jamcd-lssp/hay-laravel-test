@@ -13,11 +13,11 @@ class FolderPolicy
     /**
     * Create a new policy instance.
     * @param User $user
-    * @param Folder $folder
+    * @param Todo $todo
     * @return bool
     */
-    public function view(User $user, Folder $folder)
+    public function view(User $user, Todo $todo)
     {
-        return $user->id === $folder->user_id;
+        return $user->id === $todo->user_id;
     }
 }
