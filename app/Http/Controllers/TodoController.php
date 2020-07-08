@@ -71,7 +71,7 @@ class TodoController extends Controller
 
     private function checkRelation(int $id, int $task_id)
     {
-        if ($id->id !== $task_id->folder_id) {
+        if ($id !== $task_id) {
             abort(404);
         }
     }
