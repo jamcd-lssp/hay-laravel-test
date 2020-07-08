@@ -19,13 +19,13 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::post('/folders/create', 'FolderController@create');
 
 	Route::group(['middleware' => 'can:view,todo'], function() {
-		Route::get('/folders/{todo}/tasks', 'TodoController@index')->name('todo.index');
+		Route::get('/folders/{id}/tasks', 'TodoController@index')->name('todo.index');
 
-		Route::get('/folders/{todo}/tasks/create', 'TodoController@showCreateForm')->name('todo.create');
-		Route::post('/folders/{todo}/tasks/create', 'TodoController@create');
+		Route::get('/folders/{id}/tasks/create', 'TodoController@showCreateForm')->name('todo.create');
+		Route::post('/folders/{id}/tasks/create', 'TodoController@create');
 
-		Route::get('/folders/{todo}/tasks/{task}/edit', 'TodoController@showEditForm')->name('todo.edit');
-		Route::post('/folders/{todo}/tasks/{task}/edit', 'TodoController@edit');
+		Route::get('/folders/{id}/tasks/{task}/edit', 'TodoController@showEditForm')->name('todo.edit');
+		Route::post('/folders/{id}/tasks/{task}/edit', 'TodoController@edit');
 	});
 });
 
