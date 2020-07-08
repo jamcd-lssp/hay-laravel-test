@@ -16,7 +16,7 @@ class HomeController extends Controller
             return view('home');
         } else {
             return redirect()->route('todo.index', [
-            'todo' => $todo->id,
+            'id' => $todo->id,
             ]);
         }
     }
