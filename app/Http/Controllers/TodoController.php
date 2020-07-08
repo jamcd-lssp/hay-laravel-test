@@ -48,8 +48,8 @@ class TodoController extends Controller
 
     public function showEditForm(int $id, int $task_id)
     {
+        $this->checkRelation($id, $task_id);
         $task = Task::find($task_id);
-        $this->checkRelation($id, $task);
         return view('todo/edit', [
             'task' => $task,
         ]);
@@ -57,8 +57,8 @@ class TodoController extends Controller
 
     public function edit(int $id, int $task_id, EditTask $request)
     {
+        $this->checkRelation($id, $task_id);
         $task = Task::find($task_id);
-        $this->checkRelation($id, $task);
         $task->title = $request->title;
         $task->status = $request->status;
         $task->due_date = $request->due_date;
