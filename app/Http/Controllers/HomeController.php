@@ -10,13 +10,13 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $folder = $user->todos()->first();
+        $todo = $user->todos()->first();
 
-        if (is_null($folder)) {
+        if (is_null($todo)) {
             return view('home');
         } else {
             return redirect()->route('todo.index', [
-            'id' => $folder->id,
+            'id' => $todo->id,
             ]);
         }
     }
