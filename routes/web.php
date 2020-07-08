@@ -23,8 +23,8 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/folders/{id}/tasks/create', 'TodoController@showCreateForm')->name('todo.create');
 	Route::post('/folders/{id}/tasks/create', 'TodoController@create');
 
-	Route::get('/folders/{id}/tasks/{task}/edit', 'TodoController@showEditForm')->name('todo.edit');
-	Route::post('/folders/{id}/tasks/{task}/edit', 'TodoController@edit');
+	Route::get('/folders/{id}/tasks/{task_id}/edit', 'TodoController@showEditForm')->name('todo.edit');
+	Route::post('/folders/{id}/tasks/{task_id}/edit', 'TodoController@edit');
 });
 
 Auth::routes();

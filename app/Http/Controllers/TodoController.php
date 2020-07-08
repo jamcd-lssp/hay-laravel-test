@@ -46,18 +46,19 @@ class TodoController extends Controller
         ]);
     }
 
-    public function showEditForm(int $id, Task $task)
+    public function showEditForm(int $id, int $task_id)
     {
+        $task = Task::find($task_id);
         $this->checkRelation($id, $task);
         return view('todo/edit', [
             'task' => $task,
         ]);
     }
 
-    public function edit(int $id, Task $task, EditTask $request)
+    public function edit(int $id, int $task_id, EditTask $request)
     {
+        $task = Task::find($task_id);
         $this->checkRelation($id, $task);
-
         $task->title = $request->title;
         $task->status = $request->status;
         $task->due_date = $request->due_date;
@@ -68,9 +69,9 @@ class TodoController extends Controller
         ]);
     }
 
-    private function checkRelation(int $id, Task $task)
+    private function checkRelation(int $id, int $task_id)
     {
-        if ($id->id !== $task->folder_id) {
+        if ($id->id !== $task_id->folder_id) {
             abort(404);
         }
     }
