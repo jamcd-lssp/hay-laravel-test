@@ -16,9 +16,9 @@ class FolderController extends Controller
 
     public function create(CreateFolder $request)
     {
-    	$todo = new Todo();
-    	$todo->title = $request->title;
-    	Auth::user()->todos()->save($todo);
+    	$folder = new Todo();
+    	$folder->title = $request->title;
+    	Auth::user()->todos()->save($folder);
 
     	return redirect()->route('todo.index', [
     		'id' => $folder->id,
