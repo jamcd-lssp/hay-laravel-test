@@ -6,7 +6,6 @@ use App\Todo;
 use App\Task;
 use App\Http\Requests\CreateTask;
 use App\Http\Requests\EditTask;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
@@ -48,7 +47,7 @@ class TodoController extends Controller
 
     public function showEditForm(int $id, int $task_id)
     {
-        $this->checkRelation($id, $task_id);
+        // $this->checkRelation($id, $task_id);
         $task = Task::find($task_id);
         return view('todo/edit', [
             'task' => $task,
@@ -57,7 +56,7 @@ class TodoController extends Controller
 
     public function edit(int $id, int $task_id, EditTask $request)
     {
-        $this->checkRelation($id, $task_id);
+        // $this->checkRelation($id, $task_id);
         $task = Task::find($task_id);
         $task->title = $request->title;
         $task->status = $request->status;
